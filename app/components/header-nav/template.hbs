@@ -1,0 +1,6 @@
+{{#link-to 'index'}}Home{{/link-to}} 
+{{#if session.isAuthenticated}}
+  {{logout-button}}
+{{else}}
+  {{login-button}}
+{{/if}}
