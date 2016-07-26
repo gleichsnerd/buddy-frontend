@@ -53,5 +53,9 @@ module.exports = function(environment) {
     'media-src': "'self'"
   };
 
+  ENV['ember-simple-auth'] = {
+    authenticationRoute:"login"
+  }
+
   return ENV;
 };
