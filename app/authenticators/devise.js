@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import BaseAuthenticator from 'ember-simple-auth/authenticators/base';
 
-const { RSVP: { Promise }, isEmpty, run, $: jQuery, assign: emberAssign, merge } = Ember;
+const { RSVP: { Promise }, isEmpty, run, $: jQuery, assign: emberAssign, merge, get } = Ember;
 const assign = emberAssign || merge;
 
 /**
@@ -112,7 +112,10 @@ export default BaseAuthenticator.extend({
     @return {Ember.RSVP.Promise} A promise that when it resolves results in the session becoming authenticated
     @public
   */
-  authenticate(identification, password) {
+  authenticate(params) {
+    let identification = get(params, "email");
+    let password = get(params, "password");
+
     return new Promise((resolve, reject) => {
       const useXhr = this.get('rejectWithXhr');
       const { resourceName, identificationAttributeName, tokenAttributeName } = this.getProperties('resourceName', 'identificationAttributeName', 'tokenAttributeName');

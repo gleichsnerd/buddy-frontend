@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('login');
   this.route('post-office');
+  this.route('create-account');
 });
 
 export default Router;

@@ -1,0 +1,16 @@
+<form {{action 'createAccount' on='submit'}}>
+  <label for="first_name">First Name</label>
+  {{input id='first_name' placeholder='Bob' value=first_name}}
+  <label for="last_name">Last Name</label>
+  {{input id='last_name' placeholder='Ross' value=last_name}}
+  <label for="email">Email</label>
+  {{input id='email' placeholder='bob@ross.com' value=email}}
+  <label for="password">Password</label>
+  {{input id='password' placeholder='Enter Password' type='password' value=password}}
+  <label for="password_confirmation">Password Confirmation</label>
+  {{input id='password_confirmation' placeholder='Enter Password' type='password' value=password_confirmation}}
+  <button type="submit">Create Account</button>
+  {{#if errorMessage}}
+    <p>{{errorMessage}}</p>
+  {{/if}}
+</form>
