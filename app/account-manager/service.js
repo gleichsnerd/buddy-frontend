@@ -1,6 +1,8 @@
 import Ember from 'ember';
 
 let {
+  RSVP: { Promise },
+  $: jQuery,
   get,
   assign,
   isEmpty,
@@ -17,7 +19,6 @@ export default Ember.Service.extend({
 
   createAccount(params) {
     return new Promise((resolve, reject) => {
-      const useXhr = this.get('rejectWithXhr');
       const data = {};
 
       let self = this;
@@ -26,7 +27,6 @@ export default Ember.Service.extend({
       data["password"] = get(params, "password");
       data["password_confirmation"] = get(params, "password_confirmation");
 
-      debugger;
       if(!isEmpty(get(params, "first_name"))) {
         data["first_name"] = get(params, "first_name");
       }
@@ -50,7 +50,7 @@ export default Ember.Service.extend({
               run(null, reject, response);
             }
         }
-      )
+      );
     });
   },
 

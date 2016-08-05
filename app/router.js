@@ -9,6 +9,7 @@ Router.map(function() {
   this.route('login');
   this.route('post-office');
   this.route('create-account');
+  this.route('logout');
 });
 
 export default Router;
