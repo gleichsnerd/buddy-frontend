@@ -6,7 +6,7 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
   beforeModel() {
     console.log("Logging out");
-    debugger;
+
     this.get("session").invalidate();
     this.transitionTo('application')
   }

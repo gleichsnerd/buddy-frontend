@@ -17,6 +17,14 @@ export default Ember.Service.extend({
     return this.get('session').authenticate('authenticator:devise', params);
   },
 
+  isAuthenticated() {
+    return this.get("session.session.isAuthenticated");
+  },
+
+  getUserId() {
+    return this.get("session.session.content.authenticated.id");
+  },
+
   createAccount(params) {
     return new Promise((resolve, reject) => {
       const data = {};
