@@ -2,6 +2,6 @@
   {{mailbox-list model=model}}
   <button {{action 'goToNewMailbox'}}>Create a new mailbox</button>
 {{else}}
-  {{new-mailbox}}
+  {{new-mailbox model=model reloadModel='reloadModel' goToMailboxList='goToMailboxList'}}
   <button {{action 'goToMailboxList'}}>Back</button>
 {{/if}}

@@ -10,6 +10,10 @@ export default Ember.Component.extend({
 
     goToMailboxList() {
       this.set("isMailboxList", true)
+    },
+
+    reloadModel() {
+      this.sendAction("reloadModel")
     }
   }
 });

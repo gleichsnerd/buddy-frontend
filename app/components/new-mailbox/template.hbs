@@ -1,1 +1,8 @@
-{{yield}}
+<form {{action 'createMailbox' on='submit'}}>
+  <label for="nickname">Mailbox nickname</label>
+  {{input id='nickname' placeholder='My super cool mailbox' value=nickname}}
+  <button type="submit">Create mailbox</button>
+  {{#if errorMessage}}
+    <p>{{errorMessage}}</p>
+  {{/if}}
+</form>

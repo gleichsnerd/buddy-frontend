@@ -25,6 +25,14 @@ export default Ember.Service.extend({
     return this.get("session.session.content.authenticated.id");
   },
 
+  getToken() {
+    return this.get("session.session.content.authenticated.token");
+  },
+
+  getSessionString() {
+    return "{ id:" + this.getUserId() + ", token:'" + this.getToken() + "'}";
+  },
+
   createAccount(params) {
     return new Promise((resolve, reject) => {
       const data = {};

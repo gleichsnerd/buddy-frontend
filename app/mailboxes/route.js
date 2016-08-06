@@ -18,6 +18,17 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
           this.transitionTo("logout");
         }
     });  
+  },
+
+  actions: {
+    reloadModel() {
+      return this.get("store").findAll('mailbox').catch(
+        (response) => {
+          if(!isEmpty(get(response, "errors")) && get(response, "errors.0.status") === "500") {
+            this.transitionTo("logout");
+          }
+        });  
+    }
   }
 
 });
