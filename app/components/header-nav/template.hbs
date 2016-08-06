@@ -1,6 +1,7 @@
 {{#link-to 'index'}}Home{{/link-to}} 
 {{#if session.isAuthenticated}}
-  {{logout-button}}
+  {{#link-to 'mailboxes'}}Mailboxes{{/link-to}}  
+  {{#link-to 'logout'}}Logout{{/link-to}}
 {{else}}
-  {{login-button}}
+  {{#link-to 'login'}}Login{{/link-to}}
 {{/if}}
