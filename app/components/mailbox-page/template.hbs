@@ -1,0 +1,7 @@
+{{#if isMailboxList}}
+  {{mailbox-list model=model}}
+  <button {{action 'goToNewMailbox'}}>Create a new mailbox</button>
+{{else}}
+  {{new-mailbox}}
+  <button {{action 'goToMailboxList'}}>Back</button>
+{{/if}}
