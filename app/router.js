@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('create-account');
   this.route('logout');
   this.route('mailboxes');
+  this.route('address-book');
 });
 
 export default Router;
