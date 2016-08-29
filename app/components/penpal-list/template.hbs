@@ -1,1 +1,11 @@
 Penpal List
+{{#each content as |addressBookRecord|}}
+<div>
+  {{addressBookRecord.friend.firstName}} {{addressBookRecord.friend.lastName}}
+  <ul>
+  {{#each addressBookRecord.addressBookFriendRecords as |record|}}
+    <li>{{record.mailbox.name}}</li>
+  {{/each}}
+  </ul>
+</div>
+{{/each}}
